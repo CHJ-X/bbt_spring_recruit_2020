@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>招新</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+</head>
+
+<body><div id="outline" style="background-color: rgb(235,224,184);
+    background-image: url(img/paper_texture.png), url(img/long_line.png);
+    background-repeat: repeat, repeat-y;
+    background-size: 400px 400px, 100% 85px; z-index: -100;"><!-- 长线好难搞 -->
+
+    <div id="bookmarks"  style="z-index: -1; position: absolute; right: 0; top: 30%;">
+        <div id="hideBtn" class="" style="background-image:url('img/btn_next.png'); width: 109px; height: 105px; cursor: pointer; position: relative; left: 100px; transform: scale(0.6,0.6);" onclick="hide(0)"></div>
+        <div id="hideArea" style="position: relative;">
+            <div id="bm1" class="bookmark" onclick="bookmarkSelect('1'); pageTurnIn('main');"><img src="img/text/text_18.gif"></div>
+            <div id="bm2" class="bookmark" onclick="bookmarkSelect('2'); pageTurnOut('main'); pageTurnOut('reg'); pageTurnIn('in0');"><img src="img/text/text_10.png"></div>
+            <div id="bm3" class="bookmark" onclick="bookmarkSelect('3'); pageTurnOut('main'); pageTurnIn('reg'); "><img src="img/text/text_14.gif"></div>
+            </div>
+    </div>
+
+    <img src="img/clip.png" style="z-index: 0; position: absolute; left: 0; top: 0;">
+
+	<div id="loading" style="z-index: -1;" class="page">
+        <div id="loadingLogo"><table class="centerTable"><tr><td> <!-- 居中table -->
+            <div class="centerDiv halfBorder"> <!-- loadinglogo本体 -->
+                <img src="img/carrot.png" style="float: right; position: relative; right: 0; top:-90px;"/><!-- 萝卜logo -->
+                <table style="width:600px; height: 200px; position: relative; top: -45px;"><tr><td align="center"><!-- 第二层居中table -->
+                    <img src="img/text/text_01.png"/>
+                    <img class="titleDot" src="img/text_dot.png" style="animation: titleDotMove 1s infinite;" />
+                    <img class="titleDot" src="img/text_dot.png" style="animation: titleDotMove 1s 0.33s infinite;"/>
+                    <img class="titleDot" src="img/text_dot.png" style="animation: titleDotMove 1s 0.66s infinite;"/>
+                </td></tr></table>
+            </div>
+        </td></tr></table></div>   
+    </div>
+    
+    <div id="main" style="z-index: -2;" class="page">
+        <div class="halfBorder centerDiv"><img class="banner" src="img/text/text_03.png"/><br/><img src="img/carrot.png" style="position: relative; top: -108px; left:240px;"></div>
+        <div class="content"><p>（缺文本，用编辑部文本补）谁说理工院校便是文艺的荒漠？作为校内新媒体平台的编辑部，必定与你同行，将世界的视线汇聚于你眼前。知乎、果壳、小说、美食、时尚、实事、诗与远方，甚至是网络写手的魅力。文字编辑，给你无处安放的才华安个家。想把自己的创意与审美用PS,AL,SAI等软件展现出来，P得一手表情包，参与报刊的设计与制作，为何不选这我们的可视化设计？按下快门，捕捉天下如梦如幻之影，打开闪光狩猎世界一动一静之美。奇思妙想脑洞大，摄影组需要你。</p></div>
+        <table class="btnLine" align="center"><tr>
+            <td><div class="btn" onclick="pageTurnOut('main'); pageTurnOut('reg'); document.getElementById('bm3').click();">进入报名</div></td>
+            <td><div class="btn" onclick="pageTurnOut('main'); document.getElementById('bm2').click();">部门简介</div></td>
+        </tr></table>
+    </div>
+
+    <div id="reg" style="z-index: -3;" class="page">
+        <div class="halfBorder centerDiv"><img class="banner" src="img/text/text_05.png"/><br/><img src="img/carrot.png" style="position: relative; top: -108px; left:240px;"></div>
+        <div class="content" style="font-size: 45px; padding-top: 55px;"><form>
+            <div>姓名：<input type="text" name="name"/></div>
+            <div>性别：
+                <input type="radio" name="sex" value="man"/>
+                <label for="man">男</label>
+                <input type="radio" name="sex" value="woman"/>
+                <label for="woman">女</label>
+            </div>
+            <div>年级：<input type="text" name="Grade"/>示例：2018</div>
+            <div>学院：<select id="from" name="College"></select></div>
+            <div>
+                宿舍：<input type="text" name="Dormitory"/>示例：C12 401
+            </div>
+            <div>手机：<input type="text" name="Phone"/></div>
+            <div>第一志愿：<select id="First_choice" name="First_choice"></select></div>
+            <div>第二志愿：<select id="Second_choice" name="Second_choice"></select></div>
+            <div>是否服从调剂：
+                <input type="radio" name="Willing_adjust" value="true"/>
+                <label for="true">是</label>
+                <input type="radio" name="Willing_adjust" value="false"/>
+                <label for="false">否</label>
+            </div>
+            <div style="padding-top: 5px;">自我介绍(可以往下滑)：</div>
+            <textarea name="Self_introduction" style="width: 95%; height: 400px; font-size: 35px; background-color: transparent; border: rgb(124,89,51) solid 5px;"></textarea>
+        </form></div>
+        <table class="btnLine" align="center"><tr>
+                <td><div class="btn" onclick="">提交</div></td>
+        </tr></table>
+    </div>
+
+</div></body>
+
+</html>

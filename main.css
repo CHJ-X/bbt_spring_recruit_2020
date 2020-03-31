@@ -1,0 +1,136 @@
+/**
+背景颜色:rgb(235,224,184)
+浅色边框 线条:rgb(198,160,105)
+深色边框 文字:rgb(124,89,51);
+**/
+@keyframes titleDotMove {
+	0%   {bottom:0px;}
+	50% {bottom:20px;}
+	100%   {bottom:0px;}
+}
+* {
+	transition: all 0.2s;
+}
+body {
+    font-family: 微软雅黑, STHeitiTC-Light;
+    color: rgb(124,89,51);
+    overflow: hidden;
+    font-size: 40px;
+}
+.page {
+	width: 100%; height: 94%;
+	position: absolute; left: 0; top: 4%;
+	background-color: rgb(235,224,184);
+	background-image: url(img/paper_texture.png), url(img/line.png);
+	background-repeat: repeat, repeat-y;
+	background-size: 400px 400px, 100% 85px;
+	transform-origin: 0 0;  /*旋转中心*/
+	transition: all 1s;
+}
+.bookmark {
+	width: 160px; height: 117px;
+	background-image: url(img/bookmark.png);
+	padding-left: 40px; padding-top: 23px;
+	cursor: pointer;
+}
+.bookmark:active {
+	transform: scale(1.1,1.1);
+}
+.centerTable, #outline {
+	width: 100%; height: 100%;
+	position: absolute; left: 0; top: 0;
+}
+.centerDiv {
+	margin: 0 auto;
+}
+.halfBorder {
+	border-top:rgb(198,160,105) solid 7px;
+	border-bottom:rgb(198,160,105) solid 7px;
+	width: 600px; height: 200px;
+	text-align: center;
+	line-height: 200px;
+}
+.titleDot {
+	margin-left: 10px;
+	margin-right: 10px;
+	position: relative;
+}
+.banner {
+	display: inline; 
+	vertical-align: middle;
+}
+.content {
+	width: 80%; height: 70%;
+	margin-top: 15px; margin-left: 10%;
+	line-height: 85px;
+	overflow: scroll;
+}
+.content p {
+	text-indent: 2em;
+}
+.content::-webkit-scrollbar {
+    width: 2px;    
+}
+#reg .content div {
+	text-indent: 0;
+	height: 85px;
+	line-height: 40px;
+}
+.btnLine {
+	width: 90%; padding-left: 5%; padding-right: 5%;
+	text-align: center;
+}
+.btn {
+	width: 350px; height: 150px;
+	background-image: url(img/btn.png);
+	margin: 0 auto;
+	font-size: 50px; font-weight: bold;
+	text-align: center;
+	line-height: 135px; padding-left: 20px;
+	cursor: pointer;
+}
+.btn:hover,.btn:active {
+	background-image: url(img/btn_click.png);
+}
+.prev {
+	width: 110px; height: 105px;
+	margin: 0 auto;
+	background-image: url(img/btn_prev.png);
+	cursor: pointer;
+}
+.next {
+	width: 110px; height: 105px;
+	margin: 0 auto;
+	background-image: url(img/btn_next.png);
+	cursor: pointer;
+}
+.prev:hover, .next:hover {
+	transform: scale(1.1,1.1);
+}
+.content input[type="text"] {
+	font-size: 45px;
+	color: rgb(124,89,51);
+	background-color: transparent;
+	border: 0;
+	border-bottom: rgb(124,89,51) solid 5px;
+}
+.content input[type="radio"] {
+	width: 40px;
+	height: 40px;
+	color: transparent;
+	border: rgb(124,89,51) solid 5px;
+}
+#hideBtn:hover {
+	opacity: 0.5;
+}
+select {
+	background-color: transparent;
+	border: rgb(124,89,51) solid 5px;
+	color: rgb(124,89,51);
+	font-size: 40px;
+}
+option {
+	background-color: rgb(235,224,184);
+	color: rgb(124,89,51);
+	font-size: 40px;
+}

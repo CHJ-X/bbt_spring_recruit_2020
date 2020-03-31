@@ -1,0 +1,59 @@
+#请求参数和响应参数
+
+//这两个不用
+//username: abc: varchar(100)用户名
+//password: abc: varchar(255)用户密码
+
+url:/bbt/application
+请求：['POST']
+参数名：参数示例：参数类型
+name: abc : varchar(100)
+sex: F/M : char(1)
+Grade: 大一 : varchar(50)
+College: 计算机科学与工程学院 : varchar(100)
+Dormitory: C12 110 : varchar(100)
+Phone: 188****6228 : varchar(100)
+First_choice: 南校技术部 : varchar(100)
+Second_choice: 南校技术部 : varchar(100)
+Willing_adjust: Y/N : char(1)
+Self_introduction: blablabla : varchar(300)
+
+响应参数
+errcode : errmsg : 状态码
+0 : 报名成功 : 200
+400 : 您已经报名！ : 400
+400 : 出现错误，请重试 : 400
+
+
+
+请求示例
+{
+	"name": "陈惠杰" ,
+	"sex":"M",
+	"Grade": "大一",
+	"College": "计算机科学与工程学院",
+	"Dormitory": "C12 110",
+	"Phone": "18813496228",
+	"First_choice": "南校技术部", 
+	"Secend_choice": "南校技术部", 
+	"Willing_adjust":"Y",
+	"Self_introduction": "机智勇敢善良帅气" 
+}
+
+
+响应示例
+重复：
+{
+    'errcode':400,
+    'errmsg':'您已经报名！'
+},400
+成功：
+{
+    'errcode': 0,
+    'errmsg': '报名成功'
+},200
+错误：
+{
+    'errcode': 400,
+    'errmsg': '出现错误，请重试'
+},400
